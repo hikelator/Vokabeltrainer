@@ -6,7 +6,9 @@ package vokabeltrainer;
  * @author hmedyan
  */
 import java.io.*;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.*;
 
@@ -45,12 +47,12 @@ public class Vokabeltrainer extends JFrame {
         ger = new String[rows]; //Variable für deutsch wird geschaffen
 
         String zeile;
-
-        for (int i = 0; (zeile = br.readLine()) != null; i++) { //i wird als Variable benutzt die immer mitwächst. Solange i nicht leer ist, wird +1 addiert. ist die nächste Zeile leer, wird die Operation abgebrochen. Ohne diese addition würde der erste Wert bei jedem durchlauf die Stelle 0 überschrieben.
-            splitted = zeile.split(";");                     //In jeder Zeile wird am ; die Liste gespalten
-            eng[i] = splitted[0];                          //linke seite bekommt den Wert 0
-            ger[i] = splitted[1];                          //rechte Seinte bekommt den Wert 1
+        List<Translation> list = new ArrayList<>();
+        while ((zeile = br.readLine()) != null) {
+            splitted = zeile.split(";");
+            list.add(new Translation(splitted[0], splitted[1]));
         }
+        Collections.shuffle(list);
 
         br.close();
 
@@ -67,25 +69,24 @@ public class Vokabeltrainer extends JFrame {
 
         Scanner vokabel = new Scanner(System.in);
 
-        for (int j = 0; j < eng.length; j++) {
+        for (int j = 0; j < list.size(); j++) {
 
             correct = false;
             while (!correct) {
 
-                System.out.print(eng[j] + " bedeutet: ");
+                Translation t = list.get(j);
+                System.out.print(t.originalWord + " bedeutet: ");
 
                 gerEingabe = vokabel.nextLine(); //nextLine betrachtet den ganzen folgenden satz. .next nur das erste Wort
 
-                if (gerEingabe.equals("Lösung bitte")){
-                    System.out.println(ger[j]);
-                }
-                
-                else if (gerEingabe.equals("please let me out")) {
+                if (gerEingabe.equals("Lösung bitte")) {
+                    System.out.println(t.translatedWord);
+                } else if (gerEingabe.equals("please let me out")) {
 
                     System.out.println("Bis zum nächsten Mal.");
                     System.exit(0);         //Programm wird beendet bevor die nächste Vokabel kommt.
 
-                } else if (gerEingabe.equals(ger[j])) {
+                } else if (gerEingabe.equals(t.translatedWord)) {
                     System.out.println("Das ist Korrekt. Auf zur nächsten Aufgabe.");
                     correct = true;
                 } else {
@@ -95,6 +96,17 @@ public class Vokabeltrainer extends JFrame {
 
         }
         System.out.println("Das war alles. Gut gemacht.");
+    }
+
+    public static class Translation {
+
+        public final String originalWord;
+        public final String translatedWord;
+
+        public Translation(String original, String translated) {
+            this.originalWord = original;
+            this.translatedWord = translated;
+        }
     }
 
 //    public vokabeltrainerGui() {
@@ -111,9 +123,4 @@ public class Vokabeltrainer extends JFrame {
 //        
 //        button = new JButton("Überprüfen");
 //        add(button);
-//    }
-//public static int getRandom(int[] array) {
-//    int rnd = new Random().nextInt(array.length);
-//    return array[rnd];
-//}
 }
