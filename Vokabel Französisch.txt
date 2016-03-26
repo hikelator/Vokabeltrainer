@@ -1,0 +1,12 @@
+soleil;Sonne
+lune;Mond
+etoile;Stern
+jaune;gelb
+vert;grün
+blue;blau
+noir;schwarz
+voiture;Auto
+fenêtre;Fenster
+argent;Geld
+pain;Brot
+jardin;Garten

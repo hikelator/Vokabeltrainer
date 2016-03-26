@@ -1,0 +1,75 @@
+ja;ich
+ja chce;ich will
+dziekuje;Danke
+prosze;Bitte
+chodz;komm
+idz;geh
+bardzo;sehr
+spac;schlafen
+jesc;essen
+pic;trinken
+piwo;Bier
+napoje;Getränke
+jedzenie;das Essen
+bulka;Brötchen
+jajko;Ei
+swieta;Feiertag
+Wielkanoc;Ostern
+zaraz;gleich
+moze;vielleicht
+patrzec;gucken
+ksiazka;Buch
+telewizor;Fernseher
+Boze Narodzenie;Weihnachten
+kosciol;Kirche
+Polej po jednym;schütt einen ein
+pokaz;zeig mal
+sluchac;hören
+kurtka;Jacke
+grzac;heizen
+kaloryfer;Heizung
+okno;Fenster
+jablko;Apfel
+gruszka;Birne
+Kluski;Klöße
+kaczka;Ente
+kurczak;Huhn
+swinia;Schwein
+wolowina;Rind
+krowa;Kuh
+obraz;Bild
+kukurydza;Mais
+mowic;reden
+czemu;warum
+kto;wer
+co;was
+w czym;bei was
+kiedy;wann
+od kiedy;seit wann
+dupa;Arsch
+samochod;Auto
+lozko;Bett
+poduszka;Kissen
+koldra;Bettdecke
+buty;Schuhe
+bluzka;Bluse
+spodnie;Hose
+kwiatek;Blume
+drzewo;Baum
+drzewo;Holz
+po co;warum
+bo;weil
+dlatego;deswegen
+oczy;Augen
+nos;Nase
+uszy;Ohren
+buzia;Mund
+zegar;Uhr
+zegarek;Armbanduhr
+chrzan;Meerrettich
+buraki;Rote Beete
+pisanki;gefärbte Eier
+pierscionek;Ring
+obraczka;Ehering
+sukienka;Kleid
+koc;Decke

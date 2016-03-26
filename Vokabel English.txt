@@ -1,0 +1,13 @@
+yo Mama;deine Mudda
+sun;Sonne
+moon;Mond
+star;Stern
+yellow;gelb
+green;grün
+blue;blau
+black;schwarz
+car;Auto
+window;Fenster
+money;Geld
+bread;Brot
+garden;Garten
