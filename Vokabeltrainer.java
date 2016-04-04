@@ -26,27 +26,22 @@ public class Vokabeltrainer extends JFrame {
         BufferedReader br = new BufferedReader(fr);
 
         //Deklaration
-        String[] eng;
-        String[] ger;
         String[] splitted;
         String gerEingabe;
         boolean correct;
+        int beantwortet = 0;
+        int fehler = 0;
+        double ergebnis = 0;
+        int note = 0;
 
         //Deklaration + Initialisierung
-        int rows = 0;
-
-        // solange line nicht leer zählt die Schleifen
-        while (br.readLine() != null) {
-            rows++;
-        }
+        
         fr.close(); // Filereader muss auf 0 gesetzt werden
         fr = new FileReader(vokFile.getSelectedFile()); //Filereader wird wieder gestartet
         br = new BufferedReader(fr);
 
-        eng = new String[rows]; //Variable für englisch wird geschaffen
-        ger = new String[rows]; //Variable für deutsch wird geschaffen
-
         String zeile;
+        
         List<Translation> list = new ArrayList<>();
         while ((zeile = br.readLine()) != null) {
             splitted = zeile.split(";");
@@ -89,13 +84,30 @@ public class Vokabeltrainer extends JFrame {
                 } else if (gerEingabe.equals(t.translatedWord)) {
                     System.out.println("Das ist Korrekt. Auf zur nächsten Aufgabe.");
                     correct = true;
+                    ++beantwortet;
                 } else {
                     System.out.println("Das war leider Falsch. Bitte versuche es noch ein mal.");
+                    ++fehler;
                 }
+                
             }
+        ergebnis = (fehler / beantwortet);
+//        
+        if (ergebnis <= 1 && ergebnis>= 0.9) note = 6;
+        if (ergebnis < 0.9 && ergebnis >=0.8 ) note = 5;
+        if (ergebnis < 0.8 && ergebnis >= 0.66) note = 4;
+        if (ergebnis < 0.66 && ergebnis >= 0.50) note = 3;
+        if (ergebnis < 0.50 && ergebnis >= 0.2) note = 2;
+        if (ergebnis < 0.19 && ergebnis >= 0) note = 1;
+        
+        
 
         }
+        
         System.out.println("Das war alles. Gut gemacht.");
+        System.out.println("Deine Note: "+ note);
+        System.out.println("Beantwortet: "+ beantwortet);
+        System.out.println("Fehler: "+ fehler);
     }
 
     public static class Translation {
